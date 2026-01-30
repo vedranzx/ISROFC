@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ImeSideRP - Server Documentation</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+    
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100%;
+      overflow-y: auto;
+    }
+    
+    .nav-link {
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+    
+    .nav-link:hover {
+      border-left-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.1);
+      transform: translateX(5px);
+    }
+    
+    .nav-link.active {
+      border-left-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.15);
+      font-weight: 600;
+    }
+    
+    .feature-box {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+      border-color: rgba(245, 158, 11, 0.6);
+    }
+    
+    .section-title {
+      position: relative;
+      padding-bottom: 12px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #f59e0b, #fb923c);
+      border-radius: 2px;
+    }
+    
+    .founder-card {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 2px solid rgba(245, 158, 11, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .founder-card:hover {
+      border-color: rgba(245, 158, 11, 0.6);
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+    }
+    
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        height: auto;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-gradient-to-br from-slate-900 via-gray-900 to-slate-950 text-white overflow-auto">
+  <div class="w-full min-h-full flex flex-col md:flex-row"><!-- Sidebar Navigation -->
+   <aside class="w-full md:w-64 bg-slate-900/50 border-r border-amber-500/20 p-6 sidebar">
+    <div class="mb-8">
+     <h2 id="sidebar-title" class="text-2xl font-bold text-amber-500 mb-2" style="font-family: 'Bebas Neue', sans-serif;">IMESIDERP</h2>
+     <p class="text-sm text-gray-400" style="font-family: 'Space Grotesk', sans-serif;">Server Documentation</p>
+    </div>
+    <nav><a href="#home" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">🏠 Home</a> <a href="#about" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">📖 Tentang Server</a> <a href="#founders" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">👥 Founders</a> <a href="#features" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">⚡ Fitur Server</a> <a href="#systems" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">🎮 Sistem Gameplay</a> <a href="#factions" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">🏛️ Factions</a> <a href="#rules" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">📜 Server Rules</a> <a href="#contact" class="nav-link block py-3 px-4 text-gray-300 mb-2 rounded" style="font-family: 'Space Grotesk', sans-serif;">📞 Contact</a>
+    </nav>
+   </aside><!-- Main Content -->
+   <main class="flex-1 overflow-y-auto">
+    <div class="max-w-5xl mx-auto p-6 md:p-12"><!-- Hero Section -->
+     <section id="home" class="mb-20">
+      <div class="text-center mb-8">
+       <h1 id="main-title" class="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 bg-clip-text text-transparent" style="font-family: 'Bebas Neue', sans-serif;">IMESIDERP</h1>
+       <p id="tagline" class="text-xl md:text-2xl text-gray-300 mb-6" style="font-family: 'Space Grotesk', sans-serif;">Experience Real Roleplay in San Andreas</p>
+       <div class="flex justify-center gap-4"><span class="px-4 py-2 bg-amber-500/20 border border-amber-500/50 rounded-lg text-amber-400" style="font-family: 'Space Grotesk', sans-serif;">🎮 SA-MP 0.3.7</span> <span class="px-4 py-2 bg-emerald-500/20 border border-emerald-500/50 rounded-lg text-emerald-400" style="font-family: 'Space Grotesk', sans-serif;">🟢 Online</span>
+       </div>
+      </div>
+     </section><!-- About Section -->
+     <section id="about" class="mb-20">
+      <h2 class="section-title text-4xl font-bold mb-8 text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">📖 Tentang ImeSideRP</h2>
+      <div class="bg-slate-800/50 border border-amber-500/20 rounded-2xl p-8" style="font-family: 'Space Grotesk', sans-serif;">
+       <p class="text-gray-300 text-lg leading-relaxed mb-6"><strong class="text-amber-500">ImeSideRP</strong> adalah server roleplay San Andreas Multiplayer yang didirikan dengan visi untuk memberikan pengalaman roleplay yang realistis dan immersive kepada seluruh pemain. Server ini menghadirkan sistem gameplay yang kompleks namun mudah dipelajari, cocok untuk pemain baru maupun veteran roleplay.</p>
+       <p class="text-gray-300 text-lg leading-relaxed mb-6">Berlatar belakang di kota San Andreas yang luas, ImeSideRP menawarkan berbagai kesempatan untuk membangun karakter Anda sendiri - mulai dari seorang warga sipil biasa, pengusaha sukses, anggota kepolisian, hingga bagian dari organisasi kriminal yang terorganisir.</p>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+        <div class="bg-slate-900/50 border border-amber-500/30 rounded-xl p-6 text-center">
+         <div class="text-4xl mb-2">
+          🎯
+         </div>
+         <h3 class="text-amber-500 font-bold mb-2">Realistic RP</h3>
+         <p class="text-gray-400 text-sm">Roleplay realistis dengan aturan ketat</p>
+        </div>
+        <div class="bg-slate-900/50 border border-amber-500/30 rounded-xl p-6 text-center">
+         <div class="text-4xl mb-2">
+          👥
+         </div>
+         <h3 class="text-amber-500 font-bold mb-2">Active Community</h3>
+         <p class="text-gray-400 text-sm">Komunitas aktif dan supportif</p>
+        </div>
+        <div class="bg-slate-900/50 border border-amber-500/30 rounded-xl p-6 text-center">
+         <div class="text-4xl mb-2">
+          🛠️
+         </div>
+         <h3 class="text-amber-500 font-bold mb-2">Custom Scripts</h3>
+         <p class="text-gray-400 text-sm">Sistem custom berkualitas tinggi</p>
+        </div>
+       </div>
+      </div>
+     </section><!-- Founders Section -->
+     <section id="founders" class="mb-20">
+      <h2 class="section-title text-4xl font-bold mb-8 text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">👥 Server Founders</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><!-- Founder 1 -->
+       <div class="founder-card rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+         <div class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-4xl">
+          👑
+         </div>
+         <div>
+          <h3 id="founder-1-name" class="text-2xl font-bold text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">VEDRAN VAZQUEZ</h3>
+          <p class="text-gray-400" style="font-family: 'Space Grotesk', sans-serif;">Lead Founder &amp; Developer</p>
+         </div>
+        </div>
+        <p class="text-gray-300 leading-relaxed" style="font-family: 'Space Grotesk', sans-serif;">Visioner utama di balik ImeSideRP. Vedran membawa pengalaman bertahun-tahun dalam dunia SA-MP roleplay dan pengembangan server. Bertanggung jawab atas konsep keseluruhan server dan pengembangan sistem inti.</p>
+        <div class="mt-6 flex gap-2 flex-wrap"><span class="px-3 py-1 bg-amber-500/20 border border-amber-500/40 rounded-lg text-amber-400 text-sm" style="font-family: 'Space Grotesk', sans-serif;">💻 Developer</span> <span class="px-3 py-1 bg-amber-500/20 border border-amber-500/40 rounded-lg text-amber-400 text-sm" style="font-family: 'Space Grotesk', sans-serif;">🎮 Game Designer</span> <span class="px-3 py-1 bg-amber-500/20 border border-amber-500/40 rounded-lg text-amber-400 text-sm" style="font-family: 'Space Grotesk', sans-serif;">👑 Owner</span>
+        </div>
+       </div><!-- Founder 2 -->
+       <div class="founder-card rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+         <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-4xl">
+          ⭐
+         </div>
+         <div>
+          <h3 id="founder-2-name" class="text-2xl font-bold text-orange-500" style="font-family: 'Bebas Neue', sans-serif;">YUSA</h3>
+          <p class="text-gray-400" style="font-family: 'Space Grotesk', sans-serif;">Co-Founder &amp; Community Manager</p>
+         </div>
+        </div>
+        <p class="text-gray-300 leading-relaxed" style="font-family: 'Space Grotesk', sans-serif;">Partner setia Vedran dalam membangun ImeSideRP. Yusa fokus pada pengembangan komunitas, manajemen staff, dan memastikan pengalaman bermain yang menyenangkan bagi semua pemain. Berdedikasi untuk menciptakan lingkungan roleplay yang positif.</p>
+        <div class="mt-6 flex gap-2 flex-wrap"><span class="px-3 py-1 bg-orange-500/20 border border-orange-500/40 rounded-lg text-orange-400 text-sm" style="font-family: 'Space Grotesk', sans-serif;">👥 Community</span> <span class="px-3 py-1 bg-orange-500/20 border border-orange-500/40 rounded-lg text-orange-400 text-sm" style="font-family: 'Space Grotesk', sans-serif;">🛡️ Administration</span> <span class="px-3 py-1 bg-orange-500/20 border border-orange-500/40 rounded-lg text-orange-400 text-sm" style="font-family: 'Space Grotesk', sans-serif;">⭐ Co-Owner</span>
+        </div>
+       </div>
+      </div>
+     </section><!-- Features Section -->
+     <section id="features" class="mb-20">
+      <h2 class="section-title text-4xl font-bold mb-8 text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">⚡ Fitur Unggulan Server</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="font-family: 'Space Grotesk', sans-serif;">
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         💼
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Dynamic Job System</h3>
+        <p class="text-gray-300">Lebih dari 20+ pekerjaan legal dengan sistem gaji realistis. Mulai dari sopir taksi, mekanik, hingga dokter dan pilot.</p>
+       </div>
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         🏠
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Property System</h3>
+        <p class="text-gray-300">Beli dan kelola rumah, bisnis, dan warehouse. Sistem furniture lengkap untuk customize interior.</p>
+       </div>
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         🚗
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Vehicle Ownership</h3>
+        <p class="text-gray-300">Ratusan kendaraan tersedia untuk dibeli. Sistem modifikasi, insurance, dan pajak kendaraan.</p>
+       </div>
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         🏦
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Banking System</h3>
+        <p class="text-gray-300">Sistem perbankan lengkap dengan saving account, loan, transfer antar pemain, dan ATM di seluruh kota.</p>
+       </div>
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         📱
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Smartphone System</h3>
+        <p class="text-gray-300">Smartphone dengan fitur call, SMS, kontakbook, GPS, dan aplikasi custom seperti marketplace.</p>
+       </div>
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         ⚖️
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Justice System</h3>
+        <p class="text-gray-300">Sistem hukum lengkap: arrest, jailtime, pengadilan, pengacara, dan parole system.</p>
+       </div>
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         💊
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Medical System</h3>
+        <p class="text-gray-300">Sistem kesehatan realistis dengan injury, treatment di hospital, dan ambulance service.</p>
+       </div>
+       <div class="feature-box rounded-xl p-6">
+        <div class="text-4xl mb-3">
+         🎭
+        </div>
+        <h3 class="text-xl font-bold text-amber-500 mb-3">Mask &amp; Disguise</h3>
+        <p class="text-gray-300">System mask untuk menyembunyikan identitas dalam kegiatan kriminal. ID tersembunyi saat memakai mask.</p>
+       </div>
+      </div>
+     </section><!-- Gameplay Systems Section -->
+     <section id="systems" class="mb-20">
+      <h2 class="section-title text-4xl font-bold mb-8 text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">🎮 Sistem Gameplay</h2>
+      <div class="space-y-6" style="font-family: 'Space Grotesk', sans-serif;"><!-- Character Development -->
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-amber-500 mb-4 flex items-center gap-3"><span class="text-3xl">📊</span> Character Development</h3>
+        <p class="text-gray-300 mb-4">Sistem level dan skill yang mendalam untuk mengembangkan karakter Anda:</p>
+        <ul class="space-y-2 text-gray-300">
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Level System:</strong> Maksimal level 50 dengan unlock fitur bertahap</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Skill Tree:</strong> Driving, shooting, stamina, dan skill khusus job</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Playing Hours:</strong> Reward untuk pemain setia dengan bonus dan perks</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Achievement System:</strong> Badges dan title untuk pencapaian in-game</span></li>
+        </ul>
+       </div><!-- Economy -->
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-amber-500 mb-4 flex items-center gap-3"><span class="text-3xl">💰</span> Economy System</h3>
+        <p class="text-gray-300 mb-4">Ekonomi yang seimbang dan realistis:</p>
+        <ul class="space-y-2 text-gray-300">
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Balanced Income:</strong> Gaji disesuaikan dengan cost of living</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Player Market:</strong> Jual-beli antar pemain dengan harga dinamis</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Business Profit:</strong> Bisnis menghasilkan passive income</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Tax System:</strong> Pajak properti dan kendaraan untuk sirkulasi uang</span></li>
+        </ul>
+       </div><!-- Crime & Law -->
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-2xl p-8">
+        <h3 class="text-2xl font-bold text-amber-500 mb-4 flex items-center gap-3"><span class="text-3xl">🚔</span> Crime &amp; Law Enforcement</h3>
+        <p class="text-gray-300 mb-4">Sistem kriminal dan penegakan hukum yang kompleks:</p>
+        <ul class="space-y-2 text-gray-300">
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Wanted Level:</strong> 6 level dengan konsekuensi berbeda</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Crime Types:</strong> Robbery, drug dealing, weapon trafficking, murder</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Investigation:</strong> Police dapat investigate crime scene</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">▸</span> <span><strong>Court System:</strong> Trial dengan lawyer dan judge</span></li>
+        </ul>
+       </div>
+      </div>
+     </section><!-- Factions Section -->
+     <section id="factions" class="mb-20">
+      <h2 class="section-title text-4xl font-bold mb-8 text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">🏛️ Factions &amp; Organizations</h2>
+      <div class="space-y-6" style="font-family: 'Space Grotesk', sans-serif;"><!-- Legal Factions -->
+       <div>
+        <h3 class="text-2xl font-bold text-emerald-500 mb-4">✅ Legal Factions</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+         <div class="bg-slate-800/50 border border-emerald-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-emerald-400 mb-2">🚔 Los Santos Police Department</h4>
+          <p class="text-gray-300 text-sm mb-3">Menjaga keamanan dan ketertiban kota. Patroli, investigasi, dan penangkapan kriminal.</p><span class="text-xs px-3 py-1 bg-emerald-500/20 border border-emerald-500/40 rounded-full">Government</span>
+         </div>
+         <div class="bg-slate-800/50 border border-emerald-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-emerald-400 mb-2">🚑 San Andreas Medical Department</h4>
+          <p class="text-gray-300 text-sm mb-3">Menangani medical emergency, treatment, dan ambulance service 24/7.</p><span class="text-xs px-3 py-1 bg-emerald-500/20 border border-emerald-500/40 rounded-full">Government</span>
+         </div>
+         <div class="bg-slate-800/50 border border-emerald-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-emerald-400 mb-2">🏛️ Government SA</h4>
+          <p class="text-gray-300 text-sm mb-3">Mengatur kebijakan server, license, dan administrasi kota.</p><span class="text-xs px-3 py-1 bg-emerald-500/20 border border-emerald-500/40 rounded-full">Government</span>
+         </div>
+         <div class="bg-slate-800/50 border border-emerald-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-emerald-400 mb-2">📰 San Andreas News</h4>
+          <p class="text-gray-300 text-sm mb-3">Media massa yang memberitakan event dan kejadian di San Andreas.</p><span class="text-xs px-3 py-1 bg-emerald-500/20 border border-emerald-500/40 rounded-full">Media</span>
+         </div>
+        </div>
+       </div><!-- Illegal Factions -->
+       <div>
+        <h3 class="text-2xl font-bold text-red-500 mb-4">⛔ Illegal Factions</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+         <div class="bg-slate-800/50 border border-red-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-red-400 mb-2">🔫 Obsidian Fangs</h4>
+          <p class="text-gray-300 text-sm mb-3">Gang yang menguasai wilayah West dan sekitarnya.</p><span class="text-xs px-3 py-1 bg-red-500/20 border border-red-500/40 rounded-full">Street Gang</span>
+         </div>
+         <div class="bg-slate-800/50 border border-red-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-red-400 mb-2">💀 Los Santos Vagos</h4>
+          <p class="text-gray-300 text-sm mb-3">Gang Meksiko yang beroperasi di East Los Santos dengan bisnis drugs.</p><span class="text-xs px-3 py-1 bg-red-500/20 border border-red-500/40 rounded-full">Street Gang</span>
+         </div>
+         <div class="bg-slate-800/50 border border-red-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-red-400 mb-2">🎩 La Cosa Nostra</h4>
+          <p class="text-gray-300 text-sm mb-3">Mafia Italia yang mengontrol bisnis legal dan illegal di kota.</p><span class="text-xs px-3 py-1 bg-red-500/20 border border-red-500/40 rounded-full">Mafia</span>
+         </div>
+         <div class="bg-slate-800/50 border border-red-500/30 rounded-xl p-6">
+          <h4 class="text-xl font-bold text-red-400 mb-2">🏍️ The Lost MC</h4>
+          <p class="text-gray-300 text-sm mb-3">Motorcycle club yang menjalankan weapon trafficking dan protection racket.</p><span class="text-xs px-3 py-1 bg-red-500/20 border border-red-500/40 rounded-full">MC Gang</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section><!-- Rules Section -->
+     <section id="rules" class="mb-20">
+      <h2 class="section-title text-4xl font-bold mb-8 text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">📜 Server Rules</h2>
+      <div class="bg-red-900/20 border border-red-500/40 rounded-2xl p-8 mb-6" style="font-family: 'Space Grotesk', sans-serif;">
+       <p class="text-red-400 font-bold mb-2">⚠️ PENTING!</p>
+       <p class="text-gray-300">Pelanggaran rules dapat mengakibatkan warning, kick, ban temporary, atau ban permanent tergantung tingkat pelanggaran.</p>
+      </div>
+      <div class="space-y-4" style="font-family: 'Space Grotesk', sans-serif;">
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-amber-500 mb-3">1️⃣ Roleplay Rules</h3>
+        <ul class="space-y-2 text-gray-300">
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Wajib roleplay setiap saat (IC = In Character)</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Dilarang metagaming (menggunakan info OOC untuk IC)</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Dilarang powergaming (memaksa roleplay tanpa kesempatan lawan)</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Gunakan /me dan /do untuk roleplay action</span></li>
+        </ul>
+       </div>
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-amber-500 mb-3">2️⃣ Combat Rules</h3>
+        <ul class="space-y-2 text-gray-300">
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Dilarang deathmatching (kill tanpa alasan roleplay)</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Wajib memberikan roleplay sebelum menyerang</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Dilarang revenge kill setelah respawn</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Combat log (logout saat fight) adalah pelanggaran berat</span></li>
+        </ul>
+       </div>
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-amber-500 mb-3">3️⃣ Character Rules</h3>
+        <ul class="space-y-2 text-gray-300">
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Nama karakter harus realistis (Firstname_Lastname)</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Dilarang nama celebrity, karakter fiksi, atau vulgar</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Character Kill (CK) hanya dengan admin approval</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Maksimal 3 karakter per akun</span></li>
+        </ul>
+       </div>
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-amber-500 mb-3">4️⃣ General Rules</h3>
+        <ul class="space-y-2 text-gray-300">
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Dilarang multi-accounting (lebih dari 1 akun aktif)</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Dilarang menggunakan cheat, mod, atau bug exploit</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Hormati sesama pemain (no racism, sexism, harassment)</span></li>
+         <li class="flex items-start gap-2"><span class="text-amber-500">•</span> <span>Ikuti instruksi admin dan staff</span></li>
+        </ul>
+       </div>
+      </div>
+     </section><!-- Contact Section -->
+     <section id="contact" class="mb-20">
+      <h2 class="section-title text-4xl font-bold mb-8 text-amber-500" style="font-family: 'Bebas Neue', sans-serif;">📞 Contact &amp; Social Media</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="font-family: 'Space Grotesk', sans-serif;">
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-amber-500 mb-4">🎮 Server Info</h3>
+        <div class="space-y-3 text-gray-300">
+         <div class="flex items-center gap-3"><span class="text-amber-500">📡</span>
+          <div>
+           <p class="text-sm text-gray-400">Server IP</p>
+           <p class="font-bold">194.102.181.219:4095</p>
+          </div>
+         </div>
+         <div class="flex items-center gap-3"><span class="text-amber-500">🌐</span>
+          <div>
+           <p class="text-sm text-gray-400">Website</p>
+           <p class="font-bold">https://vedranzx.github.io/ImeSideRP-Web/</p>
+          </div>
+         </div>
+         <div class="flex items-center gap-3"><span class="text-amber-500">📋</span>
+          <div>
+           <p class="text-sm text-gray-400">UCP (User Control Panel)</p>
+           <p class="font-bold">Register Di Discord!</p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-slate-800/50 border border-amber-500/20 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-amber-500 mb-4">💬 Social Media</h3>
+        <div class="space-y-3 text-gray-300">
+         <div class="flex items-center gap-3"><span class="text-2xl">💬</span>
+          <div>
+           <p class="text-sm text-gray-400">Discord</p>
+           <p class="font-bold">dsc.gg/imesiderp</p>
+          </div>
+         </div>
+         <div class="flex items-center gap-3"><span class="text-2xl">📷</span>
+          <div>
+           <p class="text-sm text-gray-400">Instagram</p>
+           <p class="font-bold">There isn't any yet</p>
+          </div>
+         </div>
+         <div class="flex items-center gap-3"><span class="text-2xl">▶️</span>
+          <div>
+           <p class="text-sm text-gray-400">YouTube</p>
+           <p class="font-bold">There isn't any yet</p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="mt-8 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/40 rounded-2xl p-8 text-center">
+       <h3 class="text-2xl font-bold text-amber-500 mb-3" style="font-family: 'Bebas Neue', sans-serif;">Ready to Start Your Story?</h3>
+       <p class="text-gray-300 mb-6" style="font-family: 'Space Grotesk', sans-serif;">Bergabunglah dengan komunitas ImeSideRP dan mulai petualangan roleplay Anda sekarang!</p>
+       <div class="flex justify-center gap-4 flex-wrap"><button class="px-8 py-3 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition-all transform hover:scale-105" style="font-family: 'Space Grotesk', sans-serif;"> 🎮 Join Server </button> <button class="px-8 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-lg transition-all transform hover:scale-105" style="font-family: 'Space Grotesk', sans-serif;"> 📖 Read Full Guide </button>
+       </div>
+      </div>
+     </section><!-- Footer -->
+     <footer class="text-center py-8 border-t border-amber-500/20">
+      <p class="text-gray-400" style="font-family: 'Space Grotesk', sans-serif;">© 2024 ImeSideRP. Founded by <span class="text-amber-500 font-bold">Vedran Vazquez</span> &amp; <span class="text-orange-500 font-bold">Yusa</span></p>
+      <p class="text-gray-500 text-sm mt-2" style="font-family: 'Space Grotesk', sans-serif;">All rights reserved. Made with ❤️ for the SA-MP community</p>
+     </footer>
+    </div>
+   </main>
+  </div>
+  <script>
+    const defaultConfig = {
+      server_name: "ImeSideRP",
+      tagline: "Experience Real Roleplay in San Andreas",
+      founder_primary: "Vedran Vazquez",
+      founder_secondary: "Yusa",
+      background_color: "#0f172a",
+      surface_color: "#1e293b",
+      text_color: "#ffffff",
+      primary_action_color: "#f59e0b",
+      secondary_action_color: "#fb923c",
+      font_family: "Space Grotesk",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const baseFont = config.font_family || defaultConfig.font_family;
+      const titleFont = "Bebas Neue";
+      const baseFontStack = `${baseFont}, sans-serif`;
+      const titleFontStack = `${titleFont}, sans-serif`;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+
+      document.body.style.background = `linear-gradient(135deg, #0f172a 0%, #111827 50%, #020617 100%)`;
+      document.body.style.color = textColor;
+
+      document.getElementById('sidebar-title').textContent = (config.server_name || defaultConfig.server_name).toUpperCase();
+      document.getElementById('sidebar-title').style.fontSize = `${baseSize * 1.5}px`;
+
+      const mainTitle = document.getElementById('main-title');
+      mainTitle.textContent = (config.server_name || defaultConfig.server_name).toUpperCase();
+      mainTitle.style.fontFamily = titleFontStack;
+      mainTitle.style.fontSize = `${baseSize * 4}px`;
+
+      const tagline = document.getElementById('tagline');
+      tagline.textContent = config.tagline || defaultConfig.tagline;
+      tagline.style.fontFamily = baseFontStack;
+      tagline.style.fontSize = `${baseSize * 1.25}px`;
+
+      const founder1 = document.getElementById('founder-1-name');
+      founder1.textContent = (config.founder_primary || defaultConfig.founder_primary).toUpperCase();
+      founder1.style.fontFamily = titleFontStack;
+      founder1.style.fontSize = `${baseSize * 1.5}px`;
+
+      const founder2 = document.getElementById('founder-2-name');
+      founder2.textContent = (config.founder_secondary || defaultConfig.founder_secondary).toUpperCase();
+      founder2.style.fontFamily = titleFontStack;
+      founder2.style.fontSize = `${baseSize * 1.5}px`;
+    }
+
+    // Smooth scrolling & active nav
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // Update active state
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Intersection Observer for active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${entry.target.id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                config.primary_action_color = value;
+                window.elementSdk.setConfig({ primary_action_color: value });
+              }
+            },
+            {
+              get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                config.secondary_action_color = value;
+                window.elementSdk.setConfig({ secondary_action_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["server_name", config.server_name || defaultConfig.server_name],
+          ["tagline", config.tagline || defaultConfig.tagline],
+          ["founder_primary", config.founder_primary || defaultConfig.founder_primary],
+          ["founder_secondary", config.founder_secondary || defaultConfig.founder_secondary]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c572c5ae71a44be',t:'MTc2OTY3MzM4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
